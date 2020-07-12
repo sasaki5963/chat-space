@@ -1,7 +1,15 @@
 .wrapper 
   .side_chat
     = render "side_bar"
-    .side_bar_user_name
+    .side_chat_user_name
       = render "side_bar_user_name"
+    .side_chat_group_list
+      = render "side_bar_group_list"
   .main_chat
     = render "main_chat"
+    .main_chat_group_info
+      = render "main_chat_group_info"
+    .main_chat_message_list
+      = render "main_chat_message_list"
+    .main_chat_message_from
+      = render "main_chat_message_from"

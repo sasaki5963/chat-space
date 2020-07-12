@@ -2,26 +2,42 @@
   box-sizing: border-box;
 }
 
-.wrapper 
-{
+.wrapper {
   display: flex;
   height: 100vh;
 }
 
-.side_bar_user_name {
-  width: 300px;
-  background-color: #2f3e51;
-}
-
-.side_bar {
+.side_chat {
   width: 300px; 
-  height: 300px;
-  background-color: #253141;
+  background-color: #253111;
 }
 
 .main_chat {
-  width: calc(100vw - 300px);
-  background-color: #ad0909;
+  width: calc(100% - 300px);
+  background-color: #ffffff;
 }
 
+.side_chat_user_name {
+  height: 100px;
+  background-color: #253141;
+}
 
+.side_chat_group_list {
+  height: calc(100vh - 100px);
+  background-color: #2f3e51;
+}
+
+.main_chat_group_info {
+  height: 100px;
+  background-color: #ffffff;
+}
+
+.main_chat_message_from {
+  height: 90px;
+  background-color: #d2d2d2;
+}
+
+.main_chat_message_list {
+  height: calc(100vh - 190px);
+  background-color: #fafafa;
+}
