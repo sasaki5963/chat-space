@@ -10,34 +10,82 @@
 .side_chat {
   width: 300px; 
   background-color: #253111;
+  .side_chat_user_name {
+    height: 100px;
+    background-color: #253141;
+    display: flex;
+    align-items: center;
+    .side_chat_user_top_items{
+      height: 20px;
+      width: 260px;
+      background-color: #253141;
+      margin: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      .side_chat_user_top__name {
+        display: flex;
+        align-items: center;
+        color: #ffffff;
+        font-size: 16px;
+      }
+      .side_chat_user_top__icon {
+        width: 60px;
+        background-color: #253141;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        .side_chat_user_left__icon {
+          margin-right: 5px;
+          .fa-edit{color:#ffffff;}
+        }
+        .side_chat_user_right__icon {
+          .fa-cog{color:#ffffff;}
+        }
+      }
+    }
+  }
+  .side_chat_group_list {
+    height: calc(100vh - 100px);
+    background-color: #2f3e51;
+    .side_chat_group_list__message {
+      width: 260px;
+      margin: 0 20px;
+      padding: 20px 0px 0px ;
+      font-size: 15px;
+      color:#ffffff;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .side_chat_group_list__text {
+      margin: 5px 20px 40px ;
+      font-size: 11px;
+      color:#ffffff;
+    }
+  }
 }
 
 .main_chat {
   width: calc(100% - 300px);
   background-color: #ffffff;
+  .main_chat_group_info {
+    height: 100px;
+    background-color: #ffffff;
+  }
+  .main_chat_message_from {
+    height: 90px;
+    background-color: #d2d2d2;
+  }
+  .main_chat_message_list {
+    height: calc(100vh - 190px);
+    background-color: #fafafa;
+  }
 }
 
-.side_chat_user_name {
-  height: 100px;
-  background-color: #253141;
-}
 
-.side_chat_group_list {
-  height: calc(100vh - 100px);
-  background-color: #2f3e51;
-}
 
-.main_chat_group_info {
-  height: 100px;
-  background-color: #ffffff;
-}
 
-.main_chat_message_from {
-  height: 90px;
-  background-color: #d2d2d2;
-}
 
-.main_chat_message_list {
-  height: calc(100vh - 190px);
-  background-color: #fafafa;
-}
+
+
+
