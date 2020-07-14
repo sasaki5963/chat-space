@@ -4,7 +4,39 @@
       test
       %li.group_info_moder
         moder:sasaki
+      %end
+    %end
     .group_info_edit
-      = link_to "edit", "#" ,class: "edit_link " , :style=>"color:#38AEF0;"
+      = link_to "edit", "#" ,class: "edit_link" ,:style=>"color:#38AEF0;"
+  %end
   .main_chat_message_list
+    %ul.message_list_name
+      sasaki 
+      %li.message_list_time
+        2020/07/14
+      %end
+    %end
+    .message_list_text
+      おはよう
+    %end
+    %ul.message_list_name
+      sasaki
+      %li.message_list_time
+        2020/07/14
+      %end
+    %end
+    .message_list_text
+      おはよう
+    %end
+  %end
   .main_chat_message_from
+    %form.message_input
+      .input.box
+        %input.message_input__text{placeholder: 'type a message',type: 'text'}
+        %label.message_input__image
+          = icon('far', 'image', class: 'message_input__icon')
+          %input.Hidden{type: 'file'}
+      %input.message_from__submit{type: 'submit', value: 'send'}
+    %end
+  %end
+%end
