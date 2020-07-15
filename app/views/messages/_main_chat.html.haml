@@ -1,42 +1,42 @@
-.main_chat
-  .main_chat_group_info
-    %ul.group_info_name
+.main
+  .main__header
+    %ul.main__header--info
       test
-      %li.group_info_moder
+      %li.main__header--moder
         moder:sasaki
       %end
     %end
-    .group_info_edit
+    .main__header--edit
       = link_to "edit", "#" ,class: "edit_link" ,:style=>"color:#38AEF0;"
   %end
-  .main_chat_message_list
-    %ul.message_list_name
+  .main__message
+    %ul.main__message--name
       sasaki 
-      %li.message_list_time
+      %li.main__message--time
         2020/07/14
       %end
     %end
-    .message_list_text
+    .main__message--text
       おはよう
     %end
-    %ul.message_list_name
+    %ul.main__message--name
       sasaki
-      %li.message_list_time
+      %li.main__message--time
         2020/07/14
       %end
     %end
-    .message_list_text
+    .main__message--text
       おはよう
     %end
   %end
-  .main_chat_message_from
-    %form.message_input
-      .input.box
-        %input.message_input__text{placeholder: 'type a message',type: 'text'}
-        %label.message_input__image
+  .main__footer
+    %form.main__footer--input
+      .main__footer--input_box
+        %input.main__footer--input_box_text{placeholder: 'type a message',type: 'text'}
+        %label.main__footer--input_box_image
           = icon('far', 'image', class: 'message_input__icon')
           %input.Hidden{type: 'file'}
-      %input.message_from__submit{type: 'submit', value: 'send'}
+      %input.main__footer--submit{type: 'submit', value: 'send'}
     %end
   %end
 %end

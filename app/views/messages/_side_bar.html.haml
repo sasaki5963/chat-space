@@ -1,17 +1,24 @@
-.side_chat
-  .side_chat_user_name
-    .side_chat_user_top_items
-      %h1.side_chat_user_top__name
+.side
+  .side__user
+    .side__items
+      %h1.side__name
         sasaki
-      %ul.side_chat_user_top__icon
-        %li.side_chat_user_left__icon
+      %end
+      %ul.side__icon
+        %li.side__edit
           = link_to do
             = icon('fas', 'edit')
-        %li.side_chat_user_right__icon
+        %li.side__cog
           = link_to do
             = icon('fas', 'cog')
-  .side_chat_group_list
-    %h1.side_chat_group_list__message
+    %end
+  %end
+  .side__group
+    %h1.side__list
       tech-camp
-    %ul.side_chat_group_list__text
+    %end
+    %ul.side__text
       メッセージ
+    %end
+  %end
+%end
