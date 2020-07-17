@@ -11,20 +11,17 @@
   width: 300px; 
   background-color: #253111;
   .side__user {
-    height: 100px;
     background-color: #253141;
-    display: flex;
-    align-items: center;
     .side__items{
-      height: 20px;
+      height: 100px;
       width: 260px;
-      background-color: #253141;
       margin: 0 20px;
       display: flex;
-      justify-content: space-between;
       .side__name {
+        width: 100%;
         display: flex;
         align-items: center;
+        justify-content: space-between;
         color: #ffffff;
         font-size: 16px;
       }
@@ -32,7 +29,6 @@
         width: 60px;
         background-color: #253141;
         display: flex;
-        align-items: center;
         justify-content: flex-end;
         .side__edit {
           margin-right: 5px;
@@ -47,20 +43,26 @@
   .side__group {
     height: calc(100vh - 100px);
     background-color: #2f3e51;
-    .side__list {
-      width: 260px;
-      margin: 0 20px;
-      padding: 20px 0px 0px;
-      font-size: 15px;
-      color:#ffffff;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-    }
-    .side__text {
-      margin: 5px 20px 40px;
-      font-size: 11px;
-      color:#ffffff;
+    .side__box {
+      box-sizing: border-box;
+      a{
+        text-decoration: none;
+      }
+      .side__list {
+        width: 260px;
+        margin: 0 20px;
+        padding: 20px 0px 0px;
+        font-size: 15px;
+        color:#ffffff;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+      }
+      .side__text {
+        margin: 5px 20px 40px;
+        font-size: 11px;
+        color:#ffffff;
+      }
     }
   }
 }
