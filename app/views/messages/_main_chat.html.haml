@@ -1,29 +1,35 @@
 .main
   .main__header
-    %ul.main__header--info
-      test
-      %li.main__header--moder
-        moder:sasaki
+    .main__header--info
+      = current_user.name
+      %ul.main__header--memder
+        = "Member : "
+        %li.main__header--moder
+          = current_user.name
+        %li.main__header--moder
+          = "edit"
     .main__header--edit
       = link_to "edit", "#" ,class: "edit_link" ,:style=>"color:#38AEF0;"
   .main__message
-    %ul.main__message--name
-      sasaki
-      %li.main__message--time
-        2020/07/1
-    .main__message--text
-      おはよう
-    %ul.main__message--name
-      sasaki
-      %li.main__message--time
-        2020/07/14
-    .main__message--text
-      おはよう
-  .main__footer
-    %form.main__footer--input
-      .main__footer--input_box
-        %input.main__footer--input_box_text{placeholder: 'type a message',type: 'text'}
-        %label.main__footer--input_box_image
-          = icon('far', 'image', class: 'message_input__icon')
-          %input.Hidden{type: 'file'}
-      %input.main__footer--submit{type: 'submit', value: 'send'}
+    = render @messages
+    -# .main__message--box
+    -#   %ul.main__message--name
+    -#     sasaki
+    -#     %li.main__message--time
+    -#       2020/07/1
+    -#   .main__message--text
+    -#   おはよう
+    -#   %ul.main__message--name
+    -#     sasaki
+    -#     %li.main__message--time
+    -#       2020/07/14
+    -#   .main__message--text
+    -#  おはよう
+  .Footer
+    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
+      .Form__contents
+        = f.text_field :content, class: 'Form__inputContent', placeholder: 'type a message'
+        = f.label :image, class: 'Form__inputImage' do
+          = icon('far', 'image', class: 'Form__icon')
+          = f.file_field :image, class: 'Hidden'
+      = f.submit 'Send', class: 'Form__submit'
