@@ -5,26 +5,12 @@
       %ul.main__header--memder
         = "Member : "
         %li.main__header--moder
-          = current_user.name
-        %li.main__header--moder
-          = "edit"
+          - @group.users.each do |user|
+            = user.name
     .main__header--edit
-      = link_to "edit", "#" ,class: "edit_link" ,:style=>"color:#38AEF0;"
+      = link_to "edit", edit_group_path(@group) ,class: "edit_link" ,:style=>"color:#38AEF0;"
   .main__message
     = render @messages
-    -# .main__message--box
-    -#   %ul.main__message--name
-    -#     sasaki
-    -#     %li.main__message--time
-    -#       2020/07/1
-    -#   .main__message--text
-    -#   おはよう
-    -#   %ul.main__message--name
-    -#     sasaki
-    -#     %li.main__message--time
-    -#       2020/07/14
-    -#   .main__message--text
-    -#  おはよう
   .Footer
     = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
       .Form__contents
