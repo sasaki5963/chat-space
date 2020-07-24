@@ -2,31 +2,11 @@ $(function(){
   function buildHTML(message){
     if ( message.image ) {
       let html =
-        `<div class="MessageBox">
-          <div class="MessageInfo">
-            <div class="MessageInfo__userName">
-              ${message.user_name}
-            </div>
-            <div class="MessageInfo__date">
-              ${message.created_at}
-            </div>
+        `<div class="main__message--box">
+          <div class="main__message--name">
+            ${message.user.name}
           </div>
-          <div class="Message">
-            <p class="Message__content">
-              ${message.content}
-            </p>
-            <img class="Message__image" src="${message.image}">
-          </div>
-        </div>`
-      return html;
-    } else {
-      let html =
-      `<div class="MessageBox">
-        <div class="MessageInfo">
-          <div class="MessageInfo__userName">
-            ${message.user_name}
-          </div>
-          <div class="MessageInfo__date">
+          <div class="main__message--time">
             ${message.created_at}
           </div>
         </div>
@@ -34,13 +14,31 @@ $(function(){
           <p class="Message__content">
             ${message.content}
           </p>
+          <img class="Message__image" src="${message.image}">
         </div>
       </div>`
+      return html;
+    } else {
+      let html =
+      `<div class="main__message--box">
+        <div class="main__message--name">
+          ${message.user_name}
+        </div>
+        <div class="main__message--time">
+          ${message.created_at}
+        </div>
+      </div>
+      <div class="Message">
+        <p class="Message__content">
+          ${message.content}
+        </p>
+      </div>
+    </div>`
       return html;
     };
   }
 
-  $('.Footer').on('submit', function(e){
+  $('.Form').on('submit', function(e){
     e.preventDefault();
     let formData = new FormData(this);
     let url = $(this).attr('action');
@@ -54,6 +52,13 @@ $(function(){
     })
     .done(function(data){
       let html = buildHTML(data);
+      $('.main__message').animate({ scrollTop: $('.main__message')[0].scrollHeight});
+      $('.main__message').append(html);
+      $('form')[0].reset('message_content');
+      $('input[name="commit"]').prop('disabled', false);
     })
+    .fail(function() {
+      alert("メッセージ送信に失敗しました");
+    });
   });
 });
