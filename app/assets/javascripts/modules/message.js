@@ -4,7 +4,7 @@ $(function(){
       let html =
       `<div class="main__message--box" data-message-id=${message.id}>
         <div class="main__message--name">
-          ${message.user.name}
+          ${message.user_name}
         </div>
         <div class="main__message--time">
           ${message.created_at}
